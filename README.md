@@ -1,5 +1,9 @@
 # Causal Abstraction
 
+<p align="center">
+  <img src="causabs.png" width="60%">
+</p>
+
 This repository contains the code for the paper "[Learning Causal Abstractions of Linear Structural Causal Models](https://arxiv.org/abs/2406.00394)"
 by [Riccardo Massidda](https://pages.di.unipi.it/massidda), [Sara Magliacane](https://saramagliacane.github.io/), and [Davide Bacciu](http://pages.di.unipi.it/bacciu/).
 
