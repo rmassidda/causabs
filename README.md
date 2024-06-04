@@ -1,6 +1,6 @@
 # Causal Abstraction
 
-This repository contains the code for the paper "[Learning Causal Abstractions of Linear Structural Models](https://arxiv.org/abs/2406.00394)"
+This repository contains the code for the paper "[Learning Causal Abstractions of Linear Structural Causal Models](https://arxiv.org/abs/2406.00394)"
 by [Riccardo Massidda](https://pages.di.unipi.it/massidda), [Sara Magliacane](https://saramagliacane.github.io/), and [Davide Bacciu](http://pages.di.unipi.it/bacciu/).
 The repository contains both a generic `causabs` Python package and the code to reproduce the experiments in the paper, in the `abslingam` directory.
 
