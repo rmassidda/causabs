@@ -136,3 +136,23 @@ def linear_anm(
                 endogenous[:, target] = value
 
     return endogenous
+
+def measure_blocks(tau_adj: np.ndarray) -> list[int]:
+    # Number of nodes
+    cnc_nodes = tau_adj.shape[0]
+    abs_nodes = tau_adj.shape[1]
+
+    # Measure the blocks
+    block_size = []
+    for y in range(abs_nodes):
+        start = sum(block_size)
+        last = None
+        for x in range(cnc_nodes):
+            if tau_adj[x, y] != 0.0:
+                last = x
+        assert last is not None
+        block_size.append(last + 1 - start)
+    n_ignored = cnc_nodes - sum(block_size)
+    block_size.append(n_ignored)
+
+    return block_size
