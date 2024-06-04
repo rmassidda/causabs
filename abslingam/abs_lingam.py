@@ -1,3 +1,8 @@
+"""
+Implementation of the Abs-LiNGAM method
+and its evaluation.
+"""
+
 import time
 from typing import Optional, Tuple
 
@@ -396,4 +401,7 @@ def _evaluate_lingam(
 
 @ray.remote
 def evaluate_lingam(*args, **kwargs):
+    """
+    Ray remote function to evaluate the method.
+    """
     return _evaluate_lingam(*args, **kwargs)
