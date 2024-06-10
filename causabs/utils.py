@@ -137,7 +137,22 @@ def linear_anm(
 
     return endogenous
 
+
 def measure_blocks(tau_adj: np.ndarray) -> list[int]:
+    """
+    Given an abstraction function,
+    it returns the size of each block.
+
+    Parameters
+    ----------
+    tau_adj : np.ndarray
+        Abstraction function.
+
+    Returns
+    -------
+    list[int]
+        Size of each block.
+    """
     # Number of nodes
     cnc_nodes = tau_adj.shape[0]
     abs_nodes = tau_adj.shape[1]
@@ -156,3 +171,27 @@ def measure_blocks(tau_adj: np.ndarray) -> list[int]:
     block_size.append(n_ignored)
 
     return block_size
+
+
+def block_idx(block_size: list[int]) -> list[list[int]]:
+    """
+    Given the size of each block,
+    it returns the start and end indices of each block.
+
+    Parameters
+    ----------
+    block_size : list[int]
+        Size of each block.
+
+    Returns
+    -------
+    list[list[int]]
+        Start and end indices of each block.
+    """
+    # Compute blocks
+    blocks = []
+    last = 0
+    for size in block_size:
+        blocks.append([last, last + size])
+        last += size
+    return blocks
